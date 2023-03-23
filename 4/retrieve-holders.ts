@@ -9,13 +9,13 @@ const holderAddress: string[] = [
     '0xd1d8b2aae2ebb2acf013b803bc3c24ca1303a392',
 ];
 
-const provider = new ethers.JsonRpcProvider("https://bsc-dataseed.binance.org/")
+const provider = new ethers.JsonRpcProvider("https://bsc-dataseed.binance.org/") //Calling an interface that talks to the smart contract
 
-const contract = new ethers.Contract(switchToken, ABI, provider);
+const contract = new ethers.Contract(switchToken, ABI, provider); //Creates a pointer to the contract
 
 holderAddress.forEach(async (add) => {
     try{
-        var bal = await contract.balanceOf(add);
+        var bal = await contract.balanceOf(add); //Uses reference to find balance, ABi contains all the methods of the smart contract
         console.log(add, ethers.formatUnits(bal, 8));
     }catch(err){
         console.log(err);
