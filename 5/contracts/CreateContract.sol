@@ -7,7 +7,7 @@ contract CreateContract{
         uint256 balance;
     }
 
-    function getBalance(address _walletAdd, address[] memory _tokenAdd) public view returns (Results[] memory){
+    function getBalances(address _walletAdd, address[] memory _tokenAdd) public view returns (Results[] memory){
         Results[] memory tokenAmt;
         for(uint256 i=0; i < _tokenAdd.length; i++){
             IERC20 tokenRef = IERC20(_tokenAdd[i]);
