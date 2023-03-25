@@ -13,7 +13,8 @@ contract CreateContract{
         for(uint256 i=0; i < _tokenAdd.length; i++){
             IERC20 tokenRef = IERC20(_tokenAdd[i]);
             uint256 tokenBal = tokenRef.balanceOf(_walletAdd);
-            tokenAmt[i] = Results(_tokenAdd[i], tokenBal);
+            Results memory _tokenResult = Results(_tokenAdd[i], tokenBal);
+            tokenAmt[i] = _tokenResult;
         }
         return tokenAmt;
     }
