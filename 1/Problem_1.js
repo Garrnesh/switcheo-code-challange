@@ -15,12 +15,11 @@ var sum_to_n_b = function(n) {
 };
 
 var sum_to_n_c = function(n) {
-    // Similar to part b but using a while loop instead
-
-    let result = 0;
-    while(n){
-        result+=n;
-        n-=1;
+    //Use recursion to sum values
+    if (n==0){
+        return 0;
+    }else{
+        return n + sum_to_n_c(n-1);
     }
-    return result;  
 };
+
