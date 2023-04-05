@@ -1,4 +1,4 @@
-SELECT balances.address, SUM(balances.amount * (
+SELECT balances.address, SUM(balances.amount * ( --Remember to delete this section
 CASE
     WHEN balances.denom ='usdc' THEN 0.000001
     WHEN balances.denom ='swth' THEN 0.00000005
@@ -16,3 +16,4 @@ CASE
     WHEN balances.denom ='tmz' THEN 0.003
 END
 )) >= 500;
+
